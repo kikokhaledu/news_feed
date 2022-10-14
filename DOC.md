@@ -28,5 +28,8 @@ i used function based views  because it gives me more control and can show you m
 
 i could have used django-filters to do the filtering but i think its easier that way a
 
+you will need a .env file which is provided via email
+
+
 ## License
 [by khaled yasser](kikokhaled.u@gmail.com)
