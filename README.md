@@ -10,7 +10,7 @@ to install we have to options normal pip installation and docker installation:
 with docker its easy just navigate to the root dir of the project and run the following:
 
 ```bash
-docker compose up --build
+docker compose up
 ```
 for normal installation a venv is preferred so all you need to do is to make sure you have python 3.10 installed 
 
