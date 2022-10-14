@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import profiles,subscriptions
-
+from .models import profiles, subscriptions
 
 
 admin.site.register(profiles)

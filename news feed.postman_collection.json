@@ -1,0 +1,584 @@
+{
+	"info": {
+		"_postman_id": "dcd980b6-6703-4718-87bb-a44294f8f092",
+		"name": "news feed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "profiles and users",
+			"item": [
+				{
+					"name": "create a user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "kyasser3",
+									"description": "unique ",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "Qazwsx00",
+									"description": "complex",
+									"type": "default"
+								},
+								{
+									"key": "password2",
+									"value": "Qazwsx00",
+									"description": "complex",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "kikokhaled.u+demo2@gmail.com",
+									"description": "unique ",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/profiles/request_token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profiles",
+								"request_token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtain a token with username and pw",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "kyasser2",
+									"description": "login username",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "Qazwsx00",
+									"description": "login password",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/profiles/request_token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profiles",
+								"request_token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update logged in user bio",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"description": "auth toekn for the user represtes the user",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "biography",
+									"value": "demo bio",
+									"description": "limted to 200 char",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/profiles/get_user_subscribers/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profiles",
+								"get_user_subscribers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user's subscribers with a given user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"description": "auth toekn for the user represtes the user",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8080/profiles/get_user_subscribers/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profiles",
+								"get_user_subscribers",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user's subscriptions with a given user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"description": "auth toekn for the user represtes the user",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8080/profiles/get_user_subscriptions/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profiles",
+								"get_user_subscriptions",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter user's subscriptions with a given user id and query_param",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"description": "auth toekn for the user represtes the user",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8080/profiles/get_user_subscriptions/1/?user_name=kyasser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profiles",
+								"get_user_subscriptions",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "kyasser",
+									"description": "you can put any username char"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subscribe to another user with the given id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"description": "auth toekn for the user represtes the user",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8080/profiles/subscribe/4/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profiles",
+								"subscribe",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unsubscribe from another user with the given id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8080/profiles/unsubscribe/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profiles",
+								"unsubscribe",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "add a post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "demo post one",
+									"description": "limted to 100 char",
+									"type": "default"
+								},
+								{
+									"key": "post_text",
+									"value": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede",
+									"description": "limited to 1000 char",
+									"type": "default"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/posts/add_post/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"posts",
+								"add_post",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all of my posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"description": "auth toekn for the user represtes the user",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8080/posts/get_my_posts/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"posts",
+								"get_my_posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter my posts by title",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"description": "auth toekn for the user represtes the user",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/posts/get_my_posts/?title=demo",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"posts",
+								"get_my_posts",
+								""
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "demo",
+									"description": "contains the provided word"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter posts by start date  and end date",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"description": "auth toekn for the user represtes the user",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8080/posts/get_my_posts/?start_date=2022-10-12&end_date=2022-10-11",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"posts",
+								"get_my_posts",
+								""
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2022-10-12",
+									"description": "try 2020-10-14"
+								},
+								{
+									"key": "end_date",
+									"value": "2022-10-11",
+									"description": "try a date before start date "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter posts by start date",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"description": "auth toekn for the user represtes the user",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8080/posts/get_my_posts/?start_date=2022-10-12",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"posts",
+								"get_my_posts",
+								""
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2022-10-12",
+									"description": "try 2020-10-14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter posts by end date",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 990251c217da75dce50dc72faae9afa638a3dc08",
+								"description": "auth toekn for the user represtes the user",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8080/posts/get_my_posts/?end_date=2022-10-12",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"posts",
+								"get_my_posts",
+								""
+							],
+							"query": [
+								{
+									"key": "end_date",
+									"value": "2022-10-12",
+									"description": "try 2020-10-14"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
